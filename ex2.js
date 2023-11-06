@@ -12,4 +12,4 @@ if (edad < 18) {
 
 console.log(puedesPasar) // false
 
-// PREGUNTA: ¿Por qué no se actualiza correctamente la variable 'puedesPasar'?
+// PREGUNTA: ¿Por qué no se actualiza correctamente la variable 'puedesPasar'? Porque se está intentando declarar dos veces, dentro de la función debería ponerse sin el let.
