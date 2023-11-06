@@ -35,7 +35,22 @@ console.log("Apartado C: ", pacientesVisitados); // La propiedad 'ultimaVisita' 
 
 // D) DIFÍCIL. Usa la función map para AGREGAR un nuevo campo al array de pacientes. El campo debe llamarse 'avisos'. Si el paciente NO ha pagado la última visita, dicho campo debe contener el string 'Paciente moroso, cobrar!'; en caso contrario, debe dejarse vacío. BONUS: usa un condicional ternario. BONUS: Usa el operador ...object para no tener que escribir todos los campos.
 
-let pacientesAvisos; // TODO
+let pacientesAvisos = pacientes.map((p) => {
+  return {
+    ...p,
+    avisos: !p.ultimaVisitaPagada ? "Paciente moroso, cobrar!" : "",
+  };
+});
+console.log("Apartado D: ", pacientesAvisos);
+
+// let pacientesAvisos = pacientes.map((p) => {
+//     return {
+//       nombre: p.nombre,
+//       ultimaVisitaPagada: p.ultimaVisitaPagada,
+//       ultimaVisita: p.ultimaVisita,
+//       avisos: !p.ultimaVisitaPagada ? "Paciente moroso, cobrar!" : ""
+//     };
+//   });
 // console.log("Apartado D: ", pacientesAvisos);
 /**
  * {
@@ -52,8 +67,8 @@ let pacientesAvisos; // TODO
  */
 
 // E) Usa la función map para crear tantos tags <li> como pacientes hay en el array
-let pacientesLista; // TODO
-// console.log("Apartado E: ", pacientesLista);
+let pacientesLista = pacientes.map((p) => `<li>${p.nombre}</li>`);
+console.log("Apartado E: ", pacientesLista);
 
 /**
  * ['<li>Pedro</li>', '<li>María</li>']
